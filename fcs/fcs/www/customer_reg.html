@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <style>
+  body {
+      background-color: coral;
+  }
+  </style>
+</head>
+
+<body>
+
+
+
+
+    <ons-page>
+        <center><div><h1>Customer Registration</h1></div></center>
+        <div style="text-align: center; margin-top: 30px;">
+
+        <div><ons-input type="text" id="name" modifier="underbar" onkeyup="chkname()" placeholder="Enter Name"></div><br>
+        <div><ons-radio name="radio">Male</div><br>
+        <div><ons-radio name="radio">Female</div><br>
+        <div><ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Enter Phone Number"></div><br>
+        <div><textarea class="textarea" id="address" placeholder="Enter Address"></textarea><div><br>
+        <div><ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch"></div><br>
+        <div>Tenre</div><div>   <ons-select id="tenure" >
+                    <option value="Monthly">Monthly</option>
+                    <option value="3 Months">3 Months</option>
+                    <option value="6 Months">6 Months</option>
+                    <option value="Yearly">Yearly</option>
+                  </ons-select></div><br>
+
+        <div>Blood Group</div>    <div><ons-select id="bg">
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
+                  </ons-select></div><br>
+        <div style="margin-top: 30px;">
+      <ons-button onclick="register()">Register</ons-button></div>
+    </div>
+    </ons-page>
+
+
+</body>
+</html>
