@@ -46,6 +46,11 @@
   font-weight: 700;
 
   }
+  .center-block {
+  margin: auto;
+  display: block;
+}
+
   </style>
 
 </head>
@@ -68,27 +73,27 @@
 
 
 
-      <div class="subtitle">
+      <div class="subtitle center-block">
       Enter Name
     </div><br>
-      <div class="inputText" align="center">
+      <div class="inputText center-block" align="center">
         <ons-input type="text" id="name" modifier="underbar" onkeyup="chkname()">
       </div><br>
-      <div class="inputText" align="center">
+      <div class="inputText center-block" align="center">
         <ons-radio name="radio">Male
       </div><br>
-      <div class="inputText" align="center">
+      <div class="inputText center-block" align="center">
         <ons-radio name="radio">Female
       </div><br>
-      <div class="inputText" align="center">
+      <div class="inputText center-block" align="center">
         <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Enter Phone Number">
       </div><br>
-      <div class="inputText" align="center"><textarea class="textarea" id="address" placeholder="Enter Address"></textarea>
+      <div class="inputText center-block" align="center"><textarea class="textarea" id="address" placeholder="Enter Address"></textarea>
         <div><br>
-          <div class="inputText" align="center">
+          <div class="inputText center-block" align="center">
             <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
           </div><br>
-         <div class="inputText" align="center">Tenure</div>
+         <div class="inputText center-block" align="center">Tenure</div>
           <div>
             <ons-select id="tenure">
               <option value="Monthly">Monthly</option>
@@ -99,7 +104,7 @@
           </div><br>
 
           <div>Blood Group</div>
-          <div class="inputText" align="center">
+          <div class="inputText center-block" align="center">
             <ons-select id="bg">
               <option value="A+">A+</option>
               <option value="B+">B+</option>
