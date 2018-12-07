@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "c"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "c"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "c"
+        }
+    }
+}
