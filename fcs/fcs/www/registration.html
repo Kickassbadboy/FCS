@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <style>
-  #pgcolor .page__background {
+    #pgcolor .page__background {
   background-color: rgb(87,127,185);
 }
 
@@ -52,12 +53,12 @@ ten=document.getElementById('tenure').value;
 }
 </script>
 </head>
+
 <body>
 
 
 
-
-    <ons-page id="pgcolor">
+  <ons-page id="pgcolor">
         <center><div><h1>Registration</h1></div></center>
         <div style="text-align: center; margin-top: 30px;">
 
@@ -87,13 +88,18 @@ ten=document.getElementById('tenure').value;
         <div><ons-radio id="gen" name="radio">Female</div><br>
 
 
-        <div><ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch"></div><br>
-        <div>Tenre</div><div>   <ons-select id="tenure" >
-                    <option value="Monthly">Monthly</option>
-                    <option value="3 Months">3 Months</option>
-                    <option value="6 Months">6 Months</option>
-                    <option value="Yearly">Yearly</option>
-                  </ons-select></div><br>
+          <div>
+            <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
+          </div><br>
+          <div>Tenre</div>
+          <div>
+            <ons-select id="tenure">
+              <option value="Monthly">Monthly</option>
+              <option value="3 Months">3 Months</option>
+              <option value="6 Months">6 Months</option>
+              <option value="Yearly">Yearly</option>
+            </ons-select>
+          </div><br>
 
 
         <div style="margin-top: 30px;">
@@ -103,4 +109,5 @@ ten=document.getElementById('tenure').value;
 
 
 </body>
+
 </html>
