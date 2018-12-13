@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html>
+<body>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <style>
+    #pgcolor{
+  background-color: rgb(67,136,220);
+}
+
+</style>
+</head>
+<h2>JavaScript Loops</h2>
+
+
+
+<ons-page >
+
+<div id="con">
+
+
+
+</div>
+
+<ons-fab position="bottom right">
+  <a href="addbranch.html"><ons-icon icon="md-plus"></a>
+    </ons-icon>
+  </ons-fab>
+</ons-page>
+
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+var text = "";
+var i;
+for (i = 0; i < cars.length; i++) {
+  text +=  "<ons-card id='pgcolor' ><ons-button modifier='large--quiet'><font color='silver'>"+cars[i] +"</font></ons-button></ons-card><br>";
+}
+document.getElementById("con").innerHTML = text;
+</script>
+
+</body>
+</html>

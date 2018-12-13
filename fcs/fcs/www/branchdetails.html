@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <style>
+    #pgcolor {
+  background-color: rgb(67,136,220);
+}
+
+</style>
+<script type="text/javascript">
+function fun()
+{
+var arr=["kothrud","wareja","dakor","ghg"];
+var i=0;
+var text;
+/*for (i=0;i<arr.length;i++)
+{
+  //document.getElementById("con").innerHTML+="<button>hii</buuton>";
+  text+=arr[i]+"<br>";
+}*/
+  document.getElementById("f1").innerHTML += "hii";
+}
+/*ons.ready(function(){
+  var inl=document.getElementById('cardb');
+  inl.delegate={
+    createItemContent:function(i){
+      return ons.createItemContent('')
+    }
+  }
+}*/
+</script>
+</head>
+
+<body>
+
+<ons-page >
+<p id="f1"></p>
+<!--<div id="con">
+<ons-card id="pgcolor" >
+
+<ons-button id="btn" modifier="large--quiet">
+<font color="white" id="f"></font>
+</ons-button>
+
+</ons-card>
+</div>
+
+-->
+<ons-fab position="bottom right">
+  <a href="addbranch.html"><ons-icon icon="md-plus"></a>
+    </ons-icon>
+  </ons-fab>
+</ons-page>
+</body>
+</html>
