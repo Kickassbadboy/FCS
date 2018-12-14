@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
-    <script src="js/dataConnect.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   </head>
-  <body>
   <center>
     Name <input type="text" id="name">
     Phone Number <input type="text" id="pno">
-    <input type="submit" value="Save">
+    <input type="submit" value="Save" onclick="insertData()">
   </center>
 
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBRCFWB0Y6d2Fc_maBNX7bzG-t78lQMX_M",
+      authDomain: "demofcs-38f75.firebaseapp.com",
+      databaseURL: "https://demofcs-38f75.firebaseio.com",
+      projectId: "demofcs-38f75",
+      storageBucket: "demofcs-38f75.appspot.com",
+      messagingSenderId: "232208593374"
+    };
+    firebase.initializeApp(config);
+  </script>
+<script>
 
-<script>// Initialize the default app
+var user = document.getElementById('name').value;
+var pno = document.getElementById('pno').value;
+function insertData(){
+  //var users = firebase.database().ref("users/");
+
+  var playersRef = ref.child("users");
+  playersRef.push ({
+    cname: "John",
+    phonenumber: 1,
+
+  });
+}
 
 
 </script>

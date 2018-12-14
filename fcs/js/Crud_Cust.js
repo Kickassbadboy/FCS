@@ -1,0 +1,42 @@
+function insert_cust()
+{
+customer_name;
+customer_gender;
+customer_addr;
+customer_mob;
+customer_blood_group;
+customer_desc;
+cust_how_info;
+cust_quest;
+cust_quest_level;
+cust_medic;
+cust_fit_history;
+}
+function update_cust()
+{
+  customer_name;
+  customer_gender;
+  customer_addr;
+  customer_mob;
+  customer_blood_group;
+  customer_desc;
+  cust_how_info;
+  cust_quest;
+  cust_quest_level;
+  cust_medic;
+  cust_fit_history;
+}
+function delete()
+{
+  customer_name;
+  customer_gender;
+  customer_addr;
+  customer_mob;
+  customer_blood_group;
+  customer_desc;
+  cust_how_info;
+  cust_quest;
+  cust_quest_level;
+  cust_medic;
+  cust_fit_history;
+}

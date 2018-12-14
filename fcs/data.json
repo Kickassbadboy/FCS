@@ -1,0 +1,15 @@
+{
+  "users" : [
+     {"cname": "Alex Meraz",
+       "phonenumber" : 899898924,
+     },
+     {"name":"Mohammed Rafi",
+       "phonenumber" : 434356621,
+     },
+     {"name":"Raja Tamil",
+       "phonenumber" : 2323231,
+     },
+     { "name":"Sundar Pichai",
+       "phonenumber" : 3232321,
+     }]
+}
