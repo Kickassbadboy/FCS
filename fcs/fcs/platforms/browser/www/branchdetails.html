@@ -11,36 +11,45 @@
 }
 
 </style>
+<script type="text/javascript">
+function fun()
+{
+var arr=["kothrud","wareja","dakor","ghg"];
+var i=0;
+var text;
+/*for (i=0;i<arr.length;i++)
+{
+  //document.getElementById("con").innerHTML+="<button>hii</buuton>";
+  text+=arr[i]+"<br>";
+}*/
+  document.getElementById("f1").innerHTML += "hii";
+}
+/*ons.ready(function(){
+  var inl=document.getElementById('cardb');
+  inl.delegate={
+    createItemContent:function(i){
+      return ons.createItemContent('')
+    }
+  }
+}*/
+</script>
 </head>
 
 <body>
 
 <ons-page >
-
+<p id="f1"></p>
+<!--<div id="con">
 <ons-card id="pgcolor" >
 
-<ons-button modifier="large--quiet">
-<font color="white">KOTHRUD</font>
+<ons-button id="btn" modifier="large--quiet">
+<font color="white" id="f"></font>
 </ons-button>
 
 </ons-card>
+</div>
 
-
-<ons-card id="pgcolor" >
-
-<ons-button modifier="large--quiet">
-<font color="white">WARJE</font>
-</ons-button>
-
-</ons-card>
-
-<ons-card id="pgcolor" >
-
-<ons-button modifier="large--quiet">
-<font color="white">DAHANUKAR</font>
-</ons-button>
-
-</ons-card>
+-->
 <ons-fab position="bottom right">
   <a href="addbranch.html"><ons-icon icon="md-plus"></a>
     </ons-icon>
