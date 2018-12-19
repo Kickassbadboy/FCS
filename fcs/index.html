@@ -28,18 +28,30 @@
   </script>
 <script>
 
-var user = document.getElementById('name').value;
-var pno = document.getElementById('pno').value;
-function insertData(){
-  //var users = firebase.database().ref("users/");
 
-  var playersRef = ref.child("users");
+function insertData(){
+  var user = document.getElementById('name').value;
+  var pno = document.getElementById('pno').value;
+  //var users = firebase.database().ref("users/");
+var firebaseRef = firebase.database().ref(); // connection to database
+firebaseRef.child("users/").push({    // inserting data in realtime {
+
+ id:user,
+ phonenumber:pno
+
+}
+);
+}
+  /*
+
+
+  var playersRef = ref.child("users/");
   playersRef.push ({
     cname: "John",
     phonenumber: 1,
 
-  });
-}
+  });*/
+
 
 
 </script>
