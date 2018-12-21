@@ -5,33 +5,94 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <style>
-    #pgcolor {
-  background-color: rgb(67,136,220);
-}
 
-</style>
-</head>
+<script type="text/javascript">
 
-<body>
+window.fn = {};
 
-<ons-page >
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
 
-<ons-card >
-<ons-button>
-<img src="userimg.png">
-</ons-button>
-</ons-card>
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+</script>
 
-<ons-card >
-<ons-button>
-<img src="">
-</ons-button>
-</ons-card>
-<ons-fab position="bottom right">
-  <a href="addbranch.html"><ons-icon icon="md-plus"></a>
-    </ons-icon>
-  </ons-fab>
-</ons-page>
-</body>
-</html>
+
+
+
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('registration.html')" tappable>
+          <a href="registration.html">  Registration</a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            <a href="try.html">  Branch </a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="registration.html"></ons-splitter-content>
+  </ons-splitter>
+
+  <template id="registration.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Main
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe right to open the menu!
+      </p>
+    </ons-page>
+  </template>
+
+  <template id="settings.html">
+    <ons-page>
+
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Settings
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+  </html>

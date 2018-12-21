@@ -4,40 +4,129 @@
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <style>
     #pgcolor .page__background {
   background-color: rgb(255,255,255);
 }
-
+#p1.inputText{
+  text-decoration-color: rgb(0,0,255);
+}
+textarea{
+  height: 20px;
+}
 </style>
 <script type="text/javascript">
-name=document.getElementById('name').value;
 
-chkname()
-{
+window.fn = {};
 
-}
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+
+
+
 </script>
 </head>
 
 <body>
-
-
-
-
   <ons-page id="pgcolor">
+
+<div>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('registration.html')" tappable>
+          <a href="registration.html">  Registration</a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            <a href="try.html">  Branch </a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="registration.html"></ons-splitter-content>
+  </ons-splitter>
+
+  <template id="registration.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Registration
+        </div>
+      </ons-toolbar>
+
+    </ons-page>
+  </template>
+
+  <template id="try.html">
+    <ons-page>
+
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+
+          Branches
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+</ons-page>
+</div>
+
+
     <center>
+
       <div>
+          <font color="black">
         <h1>Registration</h1>
       </div>
     </center>
     <div style="text-align: center; margin-top: 30px;color: bg-white">
 
       <div>
-        <ons-input class="tcolor" type="text" id="name" modifier="underbar" onkeyup="chkname()" placeholder="Name">
+        <ons-input class="tcolor" type="text" class="p1" id="name" modifier="underbar" placeholder="Name">
       </div><br>
-      <div><textarea class="textarea" id="address" placeholder="Enter Address"></textarea>
+      <div><ons-input class="textarea" id="address" placeholder="Enter Address">
         <div><br>
           <div>
             <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Phone Number">
@@ -68,10 +157,10 @@ chkname()
             <ons-input type="text" id="occupation" modifier="underbar" placeholder="Occupation">
           </div><br>
           <div>
-            <ons-input type="text" id="emer_name" modifier="underbar" placeholder="Emergency Contact Name">
+            <ons-input type="text" id="emer_name" modifier="underbar" placeholder="Name">
           </div><br>
           <div>
-            <ons-input type="number" id="emer_mobile" modifier="underbar" placeholder="Emergency Contact Number">
+            <ons-input type="number" id="emer_mobile" modifier="underbar" placeholder=" Contact Number">
           </div><br>
 
           <div>
@@ -85,7 +174,7 @@ chkname()
           <div>
             <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
           </div><br>
-          <div>Tenre</div>
+          <div>Tenure</div>
           <div>
             <ons-select id="tenure">
               <option value="Monthly">Monthly</option>
@@ -99,6 +188,7 @@ chkname()
           <div style="margin-top: 30px;">
             <ons-button onclick="register()">Register</ons-button>
           </div>
+</font>
         </div>
   </ons-page>
 

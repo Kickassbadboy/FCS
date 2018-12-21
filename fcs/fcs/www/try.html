@@ -4,6 +4,24 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+<script type="text/javascript">
+
+window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+</script>
+
   <style>
     #pgcolor{
   background-color: rgb(67,136,220);
@@ -14,23 +32,104 @@
 }
 </style>
 </head>
-<h2>JavaScript Loops</h2>
 
 
 
+
+
+
+<body>
 <ons-page id="pg">
+
+
+<div style="height:10%;">
+
+
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('registration.html')" tappable>
+          <a href="registration.html">  Registration</a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            <a href="try.html">  Branch </a>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="registration.html"></ons-splitter-content>
+  </ons-splitter>
+
+  <template id="registration.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Branch
+        </div>
+      </ons-toolbar>
+
+    </ons-page>
+  </template>
+
+  <template id="try.html">
+    <ons-page>
+
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Branches
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Branches
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+
+  </ons-page>
+
+
+
+</div>
 
 <div id="con">
 
 
 
 </div>
+
 <div>
-  <div>
-<ons-button>
-  <a href="addbranch.html"><ons-icon icon="md-plus">  </ons-icon></a>
+<ons-button style="float:right;">
+<a href="addbranch.html"><ons-icon icon="md-plus">  </ons-icon></a>
 
 </ons-button>
+</div>
 </div>
 </div>
 </ons-page>
@@ -41,7 +140,7 @@ var cars = ["BMW", "Volvo", "Saab", "Ford"];
 var text = "";
 var i;
 for (i = 0; i < cars.length; i++) {
-  text +=  "<br><center><ons-button id='pgcolor' modifier='large--quiet'><font color='silver'>"+cars[i] +"</font></ons-button></center><br>";
+  text +=  "<br><div><center><ons-button id='pgcolor' modifier='large--quiet'><font color='silver'>"+cars[i] +"</font></ons-button></center></div><br>";
 }
 document.getElementById("con").innerHTML = text;
 </script>
