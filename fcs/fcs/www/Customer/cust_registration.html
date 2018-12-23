@@ -11,13 +11,40 @@
 }
 
 </style>
+  <script type="text/javascript" src="js/Crud_Cust.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBRCFWB0Y6d2Fc_maBNX7bzG-t78lQMX_M",
+      authDomain: "demofcs-38f75.firebaseapp.com",
+      databaseURL: "https://demofcs-38f75.firebaseio.com",
+      projectId: "demofcs-38f75",
+      storageBucket: "demofcs-38f75.appspot.com",
+      messagingSenderId: "232208593374"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 <script type="text/javascript">
-name=document.getElementById('name').value;
+/*
 
-chkname()
-{
+name
+address
+mobile
+email
+age
+date
+bg
+occupation
+emer_name
+emer_mobile
+radio
+branch
+tenure
 
-}
+*/
 </script>
 </head>
 
@@ -97,7 +124,7 @@ chkname()
 
 
           <div style="margin-top: 30px;">
-            <ons-button onclick="register()">Register</ons-button>
+            <ons-button onclick="insertData()">Register</ons-button>
           </div>
         </div>
   </ons-page>
