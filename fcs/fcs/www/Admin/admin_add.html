@@ -21,6 +21,7 @@ Write functionality in english over here:
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
     <title>admins</title>
@@ -55,13 +56,32 @@ Write functionality in english over here:
   </ons-splitter-side>
 
   <ons-tabbar swipeable position="auto">
-    <ons-tab page="tab1.html" label="View" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
+    <ons-tab page="add_admin.html" label="Add Admins" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
     </ons-tab>
-    <ons-tab page="tab2.html" label="Delete" icon="md-settings" active-icon="md-face">
+    <ons-tab page="view_admin.html" label="View" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
+    </ons-tab>
+    <ons-tab page="delete_admin.html" label="Delete" icon="md-delete" active-icon="md-delete">
     </ons-tab>
   </ons-tabbar>
 
+<!-- Create a templete for view and delete queries that will do their tasks respectively -->
+<ons-template id="add_admin.html">
+  <ons-page>
+Add admins
+  </ons-page>
+</ons-template>
 
+<ons-template id="view_admin.html">
+  <ons-page>
+View All Admin there
+  </ons-page>
+</ons-template>
+
+<ons-template id="delete_admin.html">
+  <ons-page>
+    Delete any admin here
+  </ons-page>
+</ons-template>
 <script type="text/javascript">
   window.fn = {};
 

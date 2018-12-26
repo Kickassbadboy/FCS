@@ -4,7 +4,7 @@
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
- <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <style>
     #pgcolor .page__background {
   background-color: rgb(255,255,255);
@@ -23,41 +23,71 @@
 
 
 
-  <ons-page id="pgcolor">
-
-
-
-
-
-    <center>
-      <div>
-        <h1>Add Branch</h1>
+  <ons-page id="admins_page">
+    <ons-toolbar>
+      <div class="center" id="Page_heading">Branches</div>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
-    </center>
-    <div style="text-align: center; margin-top: 30px;color: bg-white">
+    </ons-toolbar>
+    <ons-splitter>
+      <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+        <ons-page>
+          <ons-list>
+            <ons-list-item onclick="location.href ='admin_delete.html';" tappable>
+              Members
+            </ons-list-item>
+            <ons-list-item onclick="location.href ='admin_delete.html" tappable>
+              Attendance
+            </ons-list-item>
+            <ons-list-item onclick="location.href ='admin_delete.html" tappable>
+              Admins
+            </ons-list-item>
+            <ons-list-item onclick="location.href ='admin_delete.html" tappable>
+              Branches
+            </ons-list-item>
+          </ons-list>
+        </ons-page>
+      </ons-splitter-side>
 
-      <div>
-        <ons-input class="tcolor" type="text" id="name" modifier="underbar" onkeyup="chkname()" placeholder="Enter Branch Name">
-      </div><br>
-      <div><textarea class="textarea" id="address" placeholder="Enter Address"></textarea>
-      </div><br>
-          <div>
-            <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Phone Number">
-          </div><br>
-          <div><textarea class="textarea" id="address" placeholder="Enter Timings"></textarea>
-          </div><br>
+      <ons-tabbar swipeable position="auto">
+        <ons-tab page="branch_view.html" label="View" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
+        </ons-tab>
+        <ons-tab page="tab2.html" label="Delete" icon="md-settings" active-icon="md-face">
+        </ons-tab>
+      </ons-tabbar>
 
+      <ons-template id="branch_view.html">
+        <ons-page>
 
+          <ons-list>
+            <ons-list-header>Absent</ons-list-header>
+            <ons-lazy-repeat id="infinite-list">
+              <ons-list-item>Item A</ons-list-item>
+              <ons-list-item>Item B</ons-list-item>
+            </ons-lazy-repeat>
+          </ons-list>
 
+        </ons-page>
+      </ons-template>
+      <ons-navigator page="foobar.html"></ons-navigator>
+      <script type="text/javascript">
+        window.fn = {};
 
+        window.fn.open = function() {
+          var menu = document.getElementById('menu');
+          menu.open();
+        };
 
-
-
-          <div style="margin-top: 30px;">
-            <ons-button onclick="register()">Add Branch</ons-button>
-          </div>
-        </div>
-  </ons-page>
+        window.fn.load = function(page) {
+          var content = document.getElementById('content');
+          var menu = document.getElementById('menu');
+          content.load(page)
+            .then(menu.close.bind(menu));
+        };
+      </script>
 
 
 </body>

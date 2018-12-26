@@ -12,6 +12,11 @@
   <style>
     #pgcolor .page__background {
   background-color: rgb(255,255,255);
+
+  body_cust {
+    text-align:center;
+    display: inline-block;
+  }
 }
 
 </style>
@@ -58,13 +63,35 @@ tenure
 
 
   <ons-page id="pgcolor">
-    <center>
-      <div id="headingTitle">
-        <h1>Registration</h1>
-      </div>
-    </center>
-    <div style="text-align: center; margin-top: 30px;color: bg-white">
+    <ons-toolbar>
+    <div class="center" id="Page_heading">Members</div>
+    <div class="left">
+      <ons-toolbar-button onclick="fn.open()">
+        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+    <ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-page >
+      <ons-list>
+        <ons-list-item onclick="location.href ='cust_add.html';" tappable>
+          Members
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('settings.html')" tappable>
+          Attendance
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('about.html')" tappable>
+          Admins
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('about.html')" tappable>
+          Branches
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
 
+<div id="body_cust">
       <div id="inputSize">
         <ons-input class="tcolor" type="text" id="name" modifier="underbar" onkeyup="chkname()" placeholder="Name">
       </div><br>
@@ -147,7 +174,21 @@ tenure
 
   </ons-page>
 
+  <script type="text/javascript">
+    window.fn = {};
 
+  window.fn.open = function() {
+    var menu = document.getElementById('menu');
+    menu.open();
+  };
+
+  window.fn.load = function(page) {
+    var content = document.getElementById('content');
+    var menu = document.getElementById('menu');
+    content.load(page)
+      .then(menu.close.bind(menu));
+  };
+  </script>
 </body>
 
 </html>
