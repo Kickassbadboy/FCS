@@ -23,7 +23,7 @@ Write functionality in english over here:
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
+  <script src="JS/admin_view.js"></script>
     <title>admins</title>
   </head>
   <ons-page id="admins_page">
@@ -56,9 +56,9 @@ Write functionality in english over here:
   </ons-splitter-side>
 
   <ons-tabbar swipeable position="auto">
-    <ons-tab page="add_admin.html" label="Add Admins" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
+    <ons-tab page="add_admin.html" label="Add Admins" icon="md-zoom-in, material:md-zoom-in" badge="7" >
     </ons-tab>
-    <ons-tab page="view_admin.html" label="View" icon="md-zoom-in, material:md-zoom-in" badge="7" active>
+    <ons-tab page="view_admin.html" label="View" icon="md-zoom-in, material:md-zoom-in" badge="7" >
     </ons-tab>
     <ons-tab page="delete_admin.html" label="Delete" icon="md-delete" active-icon="md-delete">
     </ons-tab>
@@ -73,7 +73,9 @@ Add admins
 
 <ons-template id="view_admin.html">
   <ons-page>
-View All Admin there
+<ons-list>
+
+</ons-list>
   </ons-page>
 </ons-template>
 
@@ -96,6 +98,10 @@ window.fn.load = function(page) {
   content.load(page)
     .then(menu.close.bind(menu));
 };
+
+
+
+
 </script>
 
 
