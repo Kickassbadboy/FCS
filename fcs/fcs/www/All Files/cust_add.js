@@ -9,7 +9,7 @@ function insertData(){
   var cust_fit_his=document.getElementById('cust_fit_hist').value;
   var cust_medic_his=document.getElementById('medic_hist').value;
   var joining_date =document.getElementById('joining_date').value;
-  var cust_ending_date =document.getElementById('ending_date').value;
+  //var cust_ending_date =document.getElementById('ending_date').value;
   var cust_occupation =document.getElementById('occupation').value;
   //var users = firebase.database().ref("users/");
 var firebaseRef = firebase.database().ref(); // connection to database
@@ -26,8 +26,7 @@ firebaseRef.child("users/").push({    // inserting data in realtime {
 //  cust_quest_level:"1",
   cust_medic:cust_medic_his,
   cust_fit_history:cust_fit_his,
-  cust_join_date:joining_date,
-  cust_end_date:cust_ending_date
+  cust_join_date:joining_date
 
 }
 );

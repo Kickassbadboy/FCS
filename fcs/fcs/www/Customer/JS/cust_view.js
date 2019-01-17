@@ -13,14 +13,17 @@ var config = {
 firebase.initializeApp(config);
 */
 
-firebaseRef.child("users").on('value', function (snapshot) {
-   snapshot.forEach(function(childSnapshot) {
-    var name=childSnapshot.val().customer_name;
-  });
-});
-console.log(name);
+
 
 function CustomerList(){
+  firebaseRef.child("users").on('value', function (snapshot) {
+     snapshot.forEach(function(childSnapshot) {
+      var name=childSnapshot.val().customer_name;
+    });
+  });
+  console.log(name);
+
+ons.ready(function() {
 var infiniteList = document.getElementById('infinite-list');
 
   infiniteList.delegate = {
@@ -28,5 +31,5 @@ var infiniteList = document.getElementById('infinite-list');
       return ons.createElement('<ons-list-item>Item ' + name + '</ons-list-item>');
     }
 
-  infiniteList.refresh();
-}
+  //infiniteList.refresh();
+}};

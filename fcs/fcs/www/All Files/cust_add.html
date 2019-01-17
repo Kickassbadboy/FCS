@@ -1,9 +1,9 @@
-<!--Customer should be added using this as a registration place-->
-<!--Copy all the registration.html data over here -->
 
 
 <!DOCTYPE html>
 <html>
+<!--Customer should be added using this as a registration place-->
+<!--Copy all the registration.html data over here -->
 
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
@@ -51,27 +51,6 @@ border:none;
     firebase.initializeApp(config);
   </script>
 
-  <script type="text/javascript">
-
-    /*
-
-name
-address
-mobile
-email
-age
-date
-bg
-occupation
-emer_name
-emer_mobile
-radio
-branch
-tenure
-
-*/
-  </script>
-  <script src="JS/cust_view.js"></script>
 </head>
 
 <body>
@@ -110,22 +89,22 @@ tenure
 
       <div id="body_cust" align="center">
         <div id="inputSize">
-          <ons-input class="tcolor" type="text" id="name" modifier="transparent" onkeyup="chkname()" placeholder="Name">
+          <ons-input class="tcolor" type="text" id="name" modifier="transparent"  placeholder="Name">
         </div><br>
         <div id="inputSize">
           <ons-input  type="text" id="address" placeholder="Enter Address">
         </div><br>
         <div id="inputSize">
-          <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Phone Number">
+          <ons-input type="number" id="mobile" modifier="underbar" placeholder="Phone Number">
         </div><br>
         <div id="inputSize">
-          <ons-input type="email" id="email" modifier="underbar" onkeyup="chkemail()" placeholder="Email">
+          <ons-input type="email" id="email" modifier="underbar"  placeholder="Email">
         </div><br>
         <div id="inputSize">
-          <ons-input type="number" id="age" modifier="underbar" onkeyup="chkage()" placeholder="Age">
+          <ons-input type="number" id="age" modifier="underbar" placeholder="Age">
         </div><br>
         <div id="inputSize">
-          <ons-input type="date" id="joining_date" modifier="underbar">
+          <ons-input type="date" id="joining_date" modifier="underbar" placeholder="Joining Date">
         </div><br>
         <div id="inputSize">
           <ons-input type="text" id="cust_refer" placeholder="Reference">
@@ -134,7 +113,7 @@ tenure
           <ons-input type="text" id="medic_hist" placeholder="Medical History">
         </div><br>
         <div id="inputSize">
-          <ons-input type="text" id="cust_fit_hist" placeholder="Reference">
+          <ons-input type="text" id="cust_fit_hist" placeholder="Any Previous Gyms">
         </div><br>
         <div>Blood Group</div>
         <div id="inputSize">
@@ -166,7 +145,7 @@ tenure
           <ons-radio name="radio" id="female">Female
         </div><br>
 
-
+      <!--Enter branches using combobox and retrieve values from database-->
         <div id="inputSize">
           <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
         </div><br>
@@ -186,11 +165,10 @@ tenure
         </div>
       </div>
       <br>
-
       <ons-tabbar swipeable position="auto">
-        <ons-tab page="add_cust.html" label="Add Members" icon="md-zoom-in, material:md-zoom-in"  >
+        <ons-tab page="add_cust.html" label="Add Members" icon="md-add"  >
         </ons-tab>
-        <ons-tab page="view_cust.html" label="View" icon="md-zoom-in, material:md-zoom-in" onclick="CustomerList()">
+        <ons-tab page="view_cust.html" label="View" icon="md-zoom-in, material:md-zoom-in" onclick="CustomerList();">
         </ons-tab>
         <ons-tab page="delete_cust.html" label="Delete" icon="md-delete"z>
         </ons-tab>
@@ -283,6 +261,8 @@ tenure
 
       <ons-template id="view_cust.html">
         <ons-page>
+
+
       <ons-list>
 
            <ons-lazy-repeat id="infinite-list">
