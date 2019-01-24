@@ -14,22 +14,24 @@ firebase.initializeApp(config);
 */
 
 
+//import insertData from './cust_add.js';
 
-function CustomerList(){
-  firebaseRef.child("users").on('value', function (snapshot) {
-     snapshot.forEach(function(childSnapshot) {
+function myFunction(){
+
+firebaseRef.child("users").on('value', function (snapshot) {
+    snapshot.forEach(function(childSnapshot) {
       var name=childSnapshot.val().customer_name;
     });
   });
   console.log(name);
-
-ons.ready(function() {
+/*
 var infiniteList = document.getElementById('infinite-list');
 
   infiniteList.delegate = {
     createItemContent: function(i) {
-      return ons.createElement('<ons-list-item>Item ' + name + '</ons-list-item>');
+      return ons.createElement('<ons-list-item>' + name + '</ons-list-item>');
     }
-
-  //infiniteList.refresh();
-}};
+  };
+ infiniteList.refresh();
+ */
+}

@@ -12,7 +12,9 @@ function insertData(){
   //var cust_ending_date =document.getElementById('ending_date').value;
   var cust_occupation =document.getElementById('occupation').value;
   //var users = firebase.database().ref("users/");
-var firebaseRef = firebase.database().ref(); // connection to database
+// connection to database
+var firebaseRef = firebase.database().ref();
+
 firebaseRef.child("users/").push({    // inserting data in realtime {
 
   customer_name:cname,
@@ -30,6 +32,42 @@ firebaseRef.child("users/").push({    // inserting data in realtime {
 
 }
 );
+}
+
+//var name = null;
+
+function db(){
+  var firebaseRef = firebase.database().ref();
+  firebaseRef.child("users").on('value', function (snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var name=childSnapshot.val().customer_name;
+
+        console.log(name);
+      });
+    });
+    myFunction();
+}
+
+
+function myFunction(){
+
+
+var infiniteList = document.getElementById('infinite-list');
+
+infiniteList.delegate = {
+  createItemContent: function() {
+    //var n = name;
+    console.log("fun"+name);
+  //  return ons.createElement('<ons-list-item tappable> ' +name+ '</ons-list-item>');
+  return ons.getElementById('infinite-list').append('<ons-list-item tappable> ' +name+ '</ons-list-item>');
+  },
+  countItems: function() {
+    return 30;
+  }
+};
+
+ infiniteList.refresh();
+
 }
 
 

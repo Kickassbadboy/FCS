@@ -15,7 +15,6 @@
 }
 
 ons-input,textarea{
-  text-input--disabled();
   border:none;
   background-color:transparent;
 border: 0px;
@@ -28,21 +27,18 @@ border:none;
 
 }
 
-#body_cust {
-  margin-top:5%;
-}
 
 </style>
-  <script type="text/javascript" src="JS/cust_add.js"></script>
-  <script type="text/javascript" src="JS/cust_view.js"></script>
+  <script type="text/javascript" src="cust_add.js"></script>
+
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 
 
 
 
 
-
   <script>
+
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBRCFWB0Y6d2Fc_maBNX7bzG-t78lQMX_M",
@@ -53,6 +49,9 @@ border:none;
       messagingSenderId: "232208593374"
     };
     firebase.initializeApp(config);
+
+
+
 
   </script>
 
@@ -171,111 +170,15 @@ border:none;
       </div>
       <br>
       <ons-tabbar swipeable position="auto">
-        <ons-tab page="add_cust.html" label="Add Members" icon="md-addition"  >
+        <ons-tab page="add_cust.html" label="Add Members" icon="md-person_add"  >
         </ons-tab>
-        <ons-tab page="view_cust.html" label="View" icon="md-zoom-in, material:md-zoom-in">
+        <ons-tab page="view_cust.html" label="View" icon="md-zoom-in, material:md-zoom-in" onclick="db()">
         </ons-tab>
         <ons-tab page="delete_cust.html" label="Delete" icon="md-delete"z>
         </ons-tab>
       </ons-tabbar>
 
-      <ons-template id="add_cust.html">
-        <ons-page>
 
-          <div id="body_cust" align="center">
-            <div id="inputSize">
-              <ons-input class="tcolor" type="text" id="name" modifier="transparent" onkeyup="chkname()" placeholder="Name">
-            </div><br>
-            <div id="inputSize">
-              <ons-input  type="text" id="address" placeholder="Enter Address">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Phone Number">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="email" id="email" modifier="underbar" onkeyup="chkemail()" placeholder="Email">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="number" id="age" modifier="underbar" onkeyup="chkage()" placeholder="Age">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="date" id="joining_date" modifier="underbar">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="text" id="cust_refer" placeholder="Reference">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="text" id="medic_hist" placeholder="Medical History">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="text" id="cust_fit_hist" placeholder="What is your goal ?">
-            </div><br>
-            <div>Blood Group</div>
-            <div id="inputSize">
-              <ons-select id="bg">
-                <option value="A+">A+</option>
-                <option value="B+">B+</option>
-                <option value="AB+">AB+</option>
-                <option value="O+">O+</option>
-                <option value="A-">A-</option>
-                <option value="B-">B-</option>
-                <option value="AB-">AB-</option>
-                <option value="O-">O-</option>
-              </ons-select>
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="text" id="occupation" modifier="underbar" placeholder="Occupation">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="text" id="emer_name" modifier="underbar" placeholder=" Emergency Name">
-            </div><br>
-            <div id="inputSize">
-              <ons-input type="number" id="emer_mobile" modifier="underbar" placeholder="Emergency Number">
-            </div><br>
-
-            <div id="RadioButton">
-              <ons-radio name="radio" id="male">Male
-            </div><br>
-            <div id="RadioButton">
-              <ons-radio name="radio" id="female">Female
-            </div><br>
-
-
-            <div id="inputSize">
-              <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
-            </div><br>
-            <div>Tenre</div>
-            <div>
-              <ons-select id="tenure">
-                <option value="Monthly">Monthly</option>
-                <option value="3 Months">3 Months</option>
-                <option value="6 Months">6 Months</option>
-                <option value="Yearly">Yearly</option>
-              </ons-select>
-            </div><br>
-
-
-            <div style="margin-top: 30px;">
-              <ons-button onclick="insertData()">Register</ons-button>
-            </div>
-          </div>
-          <br>
-
-        </ons-page>
-      </ons-template>
-
-      <ons-template id="view_cust.html" onclick="CustomerList()">
-        <ons-page>
-        <ons-list>
-           <ons-lazy-repeat id="infinite-list"><!-- //  Here data of customer name will be fetched with its name--></ons-lazy-repeat>
-         </ons-list>
-        </ons-page>
-      </ons-template>
-      <ons-template id="delete_cust.html">
-        <ons-page>
-          Delete any admin here
-        </ons-page>
-      </ons-template>
   </ons-page>
   <script type="text/javascript">
     //Inserting Data
@@ -294,4 +197,101 @@ border:none;
     };
   </script>
 </body>
+<ons-template id="add_cust.html">
+  <ons-page>
+
+    <div id="body_cust" align="center">
+      <div id="inputSize">
+        <ons-input class="tcolor" type="text" id="name" modifier="transparent" onkeyup="chkname()" placeholder="Name" autofocus required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input  type="text" id="address" placeholder="Enter Address" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="number" id="mobile" modifier="underbar" onkeyup="chkphone()" placeholder="Phone Number" max="10" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="email" id="email" modifier="underbar" onkeyup="chkemail()" placeholder="Email" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="number" id="age" modifier="underbar" onkeyup="chkage()" placeholder="Age" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="date" id="joining_date" modifier="underbar" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="text" id="cust_refer" placeholder="Reference" required>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="text" id="medic_hist" placeholder="Medical History">
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="text" id="cust_fit_hist" placeholder="What is your goal ?">
+      </div><br>
+      <div>Blood Group</div>
+      <div id="inputSize" align="left" justify="left">
+        <ons-select id="bg">
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="AB+">AB+</option>
+          <option value="O+">O+</option>
+          <option value="A-">A-</option>
+          <option value="B-">B-</option>
+          <option value="AB-">AB-</option>
+          <option value="O-">O-</option>
+        </ons-select>
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="text" id="occupation" modifier="underbar" placeholder="Occupation">
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="text" id="emer_name" modifier="underbar" placeholder=" Emergency Name">
+      </div><br>
+      <div id="inputSize">
+        <ons-input type="number" id="emer_mobile" modifier="underbar" placeholder="Emergency Number">
+      </div><br>
+
+      <div id="RadioButton">
+        <ons-radio name="radio" id="male">Male
+      </div><br>
+      <div id="RadioButton">
+        <ons-radio name="radio" id="female">Female
+      </div><br>
+
+
+      <div id="inputSize">
+        <ons-input type="text" id="branch" modifier="underbar" placeholder="Enter Branch">
+      </div><br>
+      <div>Tenre</div>
+      <div>
+        <ons-select id="tenure">
+          <option value="Monthly">Monthly</option>
+          <option value="3 Months">3 Months</option>
+          <option value="6 Months">6 Months</option>
+          <option value="Yearly">Yearly</option>
+        </ons-select>
+      </div><br>
+
+
+      <div style="margin-top: 30px;">
+        <ons-button onclick="insertData()">Register</ons-button>
+      </div>
+    </div>
+    <br>
+
+  </ons-page>
+</ons-template>
+
+<ons-template id="view_cust.html">
+  <ons-page>
+  <ons-list>
+     <ons-lazy-repeat id="infinite-list"><!-- //  Here data of customer name will be fetched with its name--></ons-lazy-repeat>
+   </ons-list>
+  </ons-page>
+</ons-template>
+<ons-template id="delete_cust.html">
+  <ons-page>
+    Delete any admin here
+  </ons-page>
+</ons-template>
 </html>
