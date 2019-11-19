@@ -17,7 +17,7 @@ function insertData() {
 
   firebaseRef.child("users/").push({ // inserting data in realtime {
 
-    customer_name:cname,
+    customer_name: cname,
 
     customer_addr: cust_addr,
     customer_mob: cust_mob,
@@ -35,36 +35,28 @@ function insertData() {
 
 
 
+//var name = null;
 
 function db() {
   var firebaseRef = firebase.database().ref();
   firebaseRef.child("users").on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
-      var name=[];
-     name.push(childSnapshot.val().customer_name);
+      var name = childSnapshot.val().customer_name;
       console.log(name);
-
-      for(i=0; i<name.length; i++){
-
-        name[i];
-      }
-
     });
   });
-myFunction();
-
+  //return name;
 }
 
 
 function myFunction() {
 
-  console.log("hey");
+
   var infiniteList = document.getElementById('infinite-list');
 
   infiniteList.delegate = {
     createItemContent: function() {
       //var n = name;
-
       console.log("fun" + name);
       return ons.createElement('<ons-list-item tappable> ' + name + '</ons-list-item>');
     },
@@ -77,30 +69,18 @@ function myFunction() {
 
 }
 
-/*
-async function newfunc() {
 
+function newfunc() {
 
-  let promise = new Promise((resolve, reject) => {
-      resolve(db());
-    });
-
-let result = await promise;
-
-
-   myFunction()
-
-}
-   // "done!"
-  /*let promise = new Promise(function(resolve, reject) {
-    db()
+  let promise = new Promise(function(resolve, reject) {
+  //
+db()
   });
 
-  let result = await promise;
-
-  myFunction();
-*/
-
+  promise.then(
+ myFunction()
+  );
+}
 
 
 
